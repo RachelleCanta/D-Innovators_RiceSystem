@@ -46,3 +46,38 @@
     background-color: grey;
     border: none;
 }
+
+@media (max-width: 1050px) {
+    .footer {
+      padding: 20px 48px;
+    }
+  
+    .footer-content {
+      grid-template-columns: 1fr; 
+      gap: 40px; 
+    }
+  
+    .footer-content-left,
+    .footer-content-right,
+    .footer-content-center {
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .footer {
+      padding: 20px 24px;
+    }
+  }
+  
+  @media (max-width: 750px) {
+    .footer {
+      padding: 20px 16px; 
+    }
+  
+    .footer-content {
+      gap: 20px; 
+    }
+  }
+  

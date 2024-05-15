@@ -1,6 +1,6 @@
 .header {
     height: 700px;
-    margin: 30px auto;
+    margin: 20px auto;
     background: url('../../assets/header_img.png') no-repeat;
     background-size: contain;
     position: relative;
@@ -11,9 +11,9 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 18px;
-    max-width: 50%;
-    bottom: 10%;
+    gap: 10px;
+    max-width: 40%;
+    bottom: 20%;
     left: 72px;
     animation: fadeIn 3s;
 }
@@ -21,7 +21,7 @@
 .header-contents h2{
     font-weight: 500;
     color: antiquewhite;
-    font-size: max(54px,22px);
+    font-size: max(54px,25px);
 }
 
 .header-contents p{
@@ -37,4 +37,46 @@
     background-color: white;
     font-size: max(12px,13px);
     border-radius: 50px;
+}
+
+@media (max-width: 1050px) {
+    .header {
+        height: 500px;
+    }
+
+    .header-contents {
+        max-width: 50%; 
+        bottom: 15%;
+        left: 50px;
+    }
+
+    .header-contents h2 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 750px) {
+    .header {
+        height: 400px;
+        margin: 20px auto; 
+    }
+
+    .header-contents {
+        max-width: 25%;
+        bottom: 30%;
+        left: 10px;
+    }
+
+    .header-contents h2 {
+        font-size: 15px;
+    }
+
+    .header-contents p {
+        font-size: 5px; 
+    }
+
+    .header-contents button {
+        padding: 4px 10px;
+        font-size: 5px; 
+    }
 }

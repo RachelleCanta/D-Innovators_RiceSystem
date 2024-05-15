@@ -54,3 +54,52 @@
     border: 4px solid #28543c;
     padding: 2px;
 }
+
+@media (max-width: 1050px) {
+    .explore-menu h1 {
+        font-size: 20px;
+    }
+
+    .explore-menu-text {
+        max-width: 80%; 
+    }
+
+    .explore-menu-list {
+        gap: 20px; 
+    }
+
+    .explore-menu-list-item img {
+        width: 70px; 
+    }
+
+    .explore-menu-list-item p {
+        font-size: 14px; 
+    }
+}
+
+@media (max-width: 750px) {
+    .explore-menu {
+        gap: 10px; 
+    }
+
+    .explore-menu h1 {
+        font-size: 18px;
+    }
+
+    .explore-menu-text {
+        max-width: 90%; 
+    }
+
+    .explore-menu-list {
+        flex-direction: column; 
+        overflow-x: hidden;
+    }
+
+    .explore-menu-list-item img {
+        width: 100px;
+    }
+
+    .explore-menu-list-item p {
+        font-size: 12px;
+    }
+}
