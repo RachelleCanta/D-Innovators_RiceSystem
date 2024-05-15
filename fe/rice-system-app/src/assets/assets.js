@@ -2,6 +2,9 @@ import basket_icon from './basket_icon.jpg'
 import logo from './logo.png'
 import header_img from './header_img.png'
 import search_icon from './search_icon.png'
+import play_store from './play_store.png'
+import app_store from './app_store.png'
+
 import menu_1 from '../assets/menu_1.jpg'
 import menu_2 from '../assets/menu_2.jpg'
 import menu_3 from '../assets/menu_3.jpg'
@@ -38,7 +41,9 @@ export const assets = {
     logo,
     basket_icon,
     search_icon,
-    header_img
+    header_img,
+    play_store,
+    app_store
 }
 
 export const menu_list =[
