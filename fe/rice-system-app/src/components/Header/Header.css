@@ -1,5 +1,5 @@
 .header {
-    height: 500px;
+    height: 700px;
     margin: 30px auto;
     background: url('../../assets/header_img.png') no-repeat;
     background-size: contain;
@@ -15,7 +15,7 @@
     max-width: 50%;
     bottom: 10%;
     left: 72px;
-    animation: fadeIn;
+    animation: fadeIn 3s;
 }
 
 .header-contents h2{
@@ -33,7 +33,7 @@
     border: none;
     color: #747474;
     font-weight: 500;
-    padding: 12px 27.6px;
+    padding: 12px 28px;
     background-color: white;
     font-size: max(12px,13px);
     border-radius: 50px;

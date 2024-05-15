@@ -3,7 +3,7 @@ import './Navbar.css';
 import { assets } from '../../assets/assets';
 
 const Navbar = () => {
-    const [menu, setMenu] = useState("menu");
+    const [menu, setMenu] = useState("home");
     
     return (
       <div className='navbar'>
@@ -20,7 +20,7 @@ const Navbar = () => {
             <div className="dot" ></div>
               </div>
             <img src={assets.basket_icon} width="45" height="50" alt="Basket"/>
-             
+            
             <button>SIGN IN</button>
         </div>
       </div>
