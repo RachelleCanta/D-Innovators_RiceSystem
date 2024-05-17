@@ -4,6 +4,7 @@ import header_img from './header_img.png'
 import search_icon from './search_icon.png'
 import play_store from './play_store.png'
 import app_store from './app_store.png'
+import cross_icon from './cross_icon.png'
 
 import menu_1 from '../assets/menu_1.jpg'
 import menu_2 from '../assets/menu_2.jpg'
@@ -43,10 +44,11 @@ export const assets = {
     search_icon,
     header_img,
     play_store,
-    app_store
+    app_store,
+    cross_icon
 }
 
-export const menu_list =[
+export const menu_list = [
     {
         menu_name: "Master Chef Premium Dinorado 25kg",
         menu_image: menu_1
@@ -54,12 +56,13 @@ export const menu_list =[
     {
         menu_name: "Master Chef Hasmin 25kg",
         menu_image: menu_2
-    }, 
+    },
     {
         menu_name: "Joseph Maharlika 25kg",
         menu_image: menu_3
     },
-    {   menu_name: "Coco Pandan Premium Rice 25kg",
+    {
+        menu_name: "Coco Pandan Premium Rice 25kg",
         menu_image: menu_4
     },
     {
@@ -104,7 +107,7 @@ export const menu_list =[
     }
 ]
 
-export const food_list =[
+export const food_list = [
     {
         _id: "1",
         name: "Master Chef Premium Dinorado",
