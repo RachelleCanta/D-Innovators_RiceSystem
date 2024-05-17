@@ -1,0 +1,80 @@
+.food-display {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.food-display h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.food-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.food-item img {
+  width: 100%;
+  height: auto;
+}
+
+.food-info {
+  padding: 20px;
+}
+
+.food-info h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.food-info p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.food-info p.price {
+  font-weight: bold;
+  color: #333;
+}
+
+.food-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.food-actions button {
+  background-color: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.food-actions button:hover {
+  background-color: #ff7875;
+}
+
+.food-actions input {
+  width: 50px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.food-actions span {
+  font-weight: bold;
+  font-size: 1rem;
+}

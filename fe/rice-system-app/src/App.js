@@ -1,31 +1,36 @@
 import React, { useState } from 'react';
-import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
 import Cart from './pages/Cart/Cart';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import Footer from './components/Footer/Footer';
 import LoginPopup from './components/LoginPopup/LoginPopup';
-const App = () => {
+import StoreProvider from './context/StoreContext';
 
-  const [showLogin, setShowLogin] = useState(false)
+const App = () => {
+  const [showLogin, setShowLogin] = useState(false);
+
+  const handleCloseCart = () => {
+    console.log("Cart closed");
+  };
 
   return (
-    <>
-    {showLogin?<LoginPopup setShowLogin={setShowLogin}/>: null}
-    <div className='app'>
-      <Navbar setShowLogin={setShowLogin}/>
-      <BrowserRouter basename='/'>
-      <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/cart' element={<Cart/>}/>
-          <Route path='/order' element={<PlaceOrder/>}/>
-        </Routes>
+    <StoreProvider>
+      {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : null}
+      <div className='app'>
+        <BrowserRouter basename='/'>
+          <Navbar setShowLogin={setShowLogin} />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/cart' element={<Cart onClose={handleCloseCart} />} />
+            <Route path='/order' element={<PlaceOrder />} />
+          </Routes>
         </BrowserRouter>
       </div>
-        <Footer/>
-    </>
-  )
-}
+      <Footer />
+    </StoreProvider>
+  );
+};
 
-export default App
+export default App;
