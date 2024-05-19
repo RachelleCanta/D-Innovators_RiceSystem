@@ -6,7 +6,9 @@ import Cart from './pages/Cart/Cart';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import Footer from './components/Footer/Footer';
 import LoginPopup from './components/LoginPopup/LoginPopup';
+import Menu from './components/Menu/Menu';
 import StoreProvider from './context/StoreContext';
+import TrackOrder from './pages/TrackOrder.js/TrackOrder';
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -24,7 +26,9 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/cart' element={<Cart onClose={handleCloseCart} />} />
-            <Route path='/order' element={<PlaceOrder />} />
+            <Route path='/checkout' element={<PlaceOrder />} />
+            <Route path='/track-order' element={<TrackOrder />} />
+            <Route path='/menu' element={<Menu />} />
           </Routes>
         </BrowserRouter>
       </div>

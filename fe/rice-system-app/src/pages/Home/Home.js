@@ -5,9 +5,18 @@ import ExploreMenu from '../../components/ExploreMenu/ExploreMenu';
 import Footer from '../../components/Footer/Footer';
 import AppDownload from '../../components/AppDownload/AppDownload';
 import FoodDisplay from '../../components/FoodDisplay/FoodDisplay';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
   const [category, setCategory] = useState("All");
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
 
   return (
     <div>
@@ -16,7 +25,16 @@ const Home = () => {
       <FoodDisplay category={category} />
       <Footer />
       <AppDownload />
+      <ScrollToTopButton onClick={handleScrollToTop} />
     </div>
+  );
+};
+
+const ScrollToTopButton = ({ onClick }) => {
+  return (
+    <button className="scroll-to-top-button" onClick={onClick}>
+      <FontAwesomeIcon icon={faChevronUp} />
+    </button>
   );
 };
 

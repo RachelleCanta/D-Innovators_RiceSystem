@@ -1,0 +1,14 @@
+.track-order {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .order-details {
+    margin-top: 20px;
+  }
+  
+  .order-details p {
+    margin-bottom: 10px;
+  }
+  

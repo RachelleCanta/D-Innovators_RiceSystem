@@ -1,42 +1,47 @@
 .food-item {
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 8px;
   overflow: hidden;
   margin-bottom: 20px;
   background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .food-item img {
   width: 100%;
   height: auto;
+  display: block;
+  border-bottom: 1px solid #ddd;
 }
 
 .food-info {
-  padding: 10px;
+  padding: 15px;
 }
 
 .food-info h2 {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
 }
 
 .food-info p {
-  font-size: 0.9rem;
-  color: #555;
-  text-align: justify;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+  text-align: justify; /* Justify text */
 }
 
 .food-info p.price {
   font-weight: bold;
-  color: #333;
-  margin-top: 10px;
+  color: #ff6600;
+  margin-top: 15px;
 }
 
 .food-actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 15px;
+  background-color: #f9f9f9;
 }
 
 .food-actions button {
@@ -44,7 +49,7 @@
   color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 8px 12px;
+  padding: 10px 15px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -55,7 +60,7 @@
 
 .food-actions input {
   width: 50px;
-  padding: 5px;
+  padding: 8px;
   border: 1px solid #ddd;
   border-radius: 5px;
   text-align: center;
@@ -63,5 +68,5 @@
 
 .food-actions span {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }

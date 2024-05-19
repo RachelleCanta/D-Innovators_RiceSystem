@@ -1,0 +1,40 @@
+.place-order {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .place-order h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .billing-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .billing-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .billing-form button {
+    background-color: #28543C;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .billing-form button:hover {
+    background-color: #28543C;
+  }
+  

@@ -5,13 +5,21 @@ import { menu_list } from '../../assets/assets';
 const ExploreMenu = ({ setCategory }) => {
   const handleClick = (brandName) => {
     setCategory(brandName);
+    scrollToTopBrands(); // Scroll to top rice brands
+  };
+
+  const scrollToTopBrands = () => {
+    const topBrandsSection = document.getElementById('top-brands-section');
+    if (topBrandsSection) {
+      topBrandsSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
     <div>
       <div className='explore-menu' id='explore-menu'>
-        <h1>Explore our rice products</h1>
-        <p className='explore-menu-text'>Choose</p>
+        <h1>Explore our Rice Products</h1>
+        <p className='explore-menu-text'>Choose Rice Type</p>
         <div className="explore-menu-list">
           {menu_list.map((item, index) => (
             <div 

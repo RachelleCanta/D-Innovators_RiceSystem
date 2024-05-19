@@ -2,33 +2,74 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Cart.css';
 import { StoreContext } from '../../context/StoreContext';
-import { food_list } from '../../assets/assets';
-import { assets } from '../../assets/assets';
+import { food_list, assets } from '../../assets/assets';
 
 const Cart = ({ onClose }) => {
   const { cartItems, removeFromCart } = useContext(StoreContext);
-  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [promoCode, setPromoCode] = useState('');
+  const [discount, setDiscount] = useState(0);
+  const [showCloseConfirmation, setShowCloseConfirmation] = useState(false);
+  const [showCheckoutConfirmation, setShowCheckoutConfirmation] = useState(false);
   const navigate = useNavigate();
 
+  const validPromoCodes = {
+    SAVE10: 10,
+    SAVE20: 20,
+    SAVE30: 30,
+  };
+
+  const handleApplyPromoCode = () => {
+    if (validPromoCodes[promoCode]) {
+      setDiscount(validPromoCodes[promoCode]);
+      alert(`Promo code applied! You got ${validPromoCodes[promoCode]}% off.`);
+    } else {
+      alert('Invalid promo code.');
+      setDiscount(0);
+    }
+  };
+
   const handleConfirmClose = () => {
-    onClose(); // Call the onClose function to close the cart
-    setShowConfirmation(false); // Close the confirmation dialog
-    navigate('/'); // Navigate to the home page
+    onClose(); 
+    navigate('/'); 
   };
 
   const handleCancelClose = () => {
-    setShowConfirmation(false);
+    setShowCloseConfirmation(false);
+  };
+
+  const handleConfirmCheckout = () => {
+    setShowCheckoutConfirmation(false);
+    navigate('/checkout'); 
+  };
+
+  const handleCancelCheckout = () => {
+    setShowCheckoutConfirmation(false);
   };
 
   const calculateTotalPrice = (id, quantity) => {
     const item = food_list.find((item) => item._id === id);
-    return item.price * quantity;
+    return item ? item.price * quantity : 0;
   };
+
+  const calculateDiscountedTotal = (total) => {
+    return total - (total * discount / 100);
+  };
+
+  const total = Object.keys(cartItems).reduce((acc, id) => {
+    const itemQuantity = cartItems[id];
+    const item = food_list.find((item) => item._id === id);
+    if (item && itemQuantity > 0) {
+      return acc + calculateTotalPrice(id, itemQuantity);
+    }
+    return acc;
+  }, 0);
+
+  const discountedTotal = calculateDiscountedTotal(total);
 
   return (
     <div className="cart">
       <div className="cart-content">
-        <button className="exit-button" onClick={() => setShowConfirmation(true)}>
+        <button className="exit-button" onClick={() => setShowCloseConfirmation(true)}>
           <img src={assets.cross_icon} alt="Close" />
         </button>
 
@@ -43,13 +84,13 @@ const Cart = ({ onClose }) => {
           </div>
           <br />
           <hr />
-          {Object.keys(cartItems).map((id, index) => {
+          {Object.keys(cartItems).map((id) => {
             const itemQuantity = cartItems[id];
             const item = food_list.find((item) => item._id === id);
             if (itemQuantity > 0 && item) {
               return (
-                <div key={index} className="cart-items-item">
-                  <img src={item.image} alt="" />
+                <div key={id} className="cart-items-item">
+                  <img src={item.image} alt={item.name} />
                   <p>{item.name}</p>
                   <p>₱ {item.price.toFixed(2)}</p>
                   <p>{itemQuantity}</p>
@@ -58,16 +99,49 @@ const Cart = ({ onClose }) => {
                 </div>
               );
             }
-            return null; // Ensure to return null if item is not found or itemQuantity is 0
+            return null;
           })}
         </div>
+
+        <div className="promo-code">
+          <input
+            type="text"
+            placeholder="Enter promo code"
+            value={promoCode}
+            onChange={(e) => setPromoCode(e.target.value)}
+          />
+          <button onClick={handleApplyPromoCode}>Apply</button>
+        </div>
+
+        <div className="cart-total">
+          <p>Total: ₱ {total.toFixed(2)}</p>
+          <p>Discount: {discount}%</p>
+          <p>Discounted Total: ₱ {discountedTotal.toFixed(2)}</p>
+        </div>
+        
+        <div className="cart-actions">
+          <button className="checkout-button" onClick={() => setShowCheckoutConfirmation(true)}>
+            Proceed to Checkout
+          </button>
+        </div>
       </div>
-      {showConfirmation && (
+      
+      {showCloseConfirmation && (
         <div className="confirmation-dialog">
           <p>Are you sure you want to close the cart?</p>
           <div className="button-group">
             <button onClick={handleConfirmClose} alt="Close">Yes</button>
             <button onClick={handleCancelClose}>No</button>
+          </div>
+        </div>
+      )}
+
+      {showCheckoutConfirmation && (
+        <div className="confirmation-dialog">
+          <p>Are you sure you want to proceed to checkout?</p>
+          <div className="button-group">
+            <button onClick={handleConfirmCheckout} alt="Proceed">Yes</button>
+            <button onClick={handleCancelCheckout}>No</button>
           </div>
         </div>
       )}

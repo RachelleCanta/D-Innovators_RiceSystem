@@ -13,10 +13,7 @@ import menu_4 from '../assets/menu_4.png'
 import menu_5 from '../assets/menu_5.png'
 import menu_6 from '../assets/menu_6.png'
 import menu_7 from '../assets/menu_7.png'
-import menu_8 from '../assets/menu_8.png'
-import menu_9 from '../assets/menu_9.png'
 import menu_10 from '../assets/menu_10.png'
-import menu_11 from '../assets/menu_11.png'
 
 
 
@@ -205,17 +202,17 @@ export const food_list = [
         name: "Lipeno Pure Dinurado 5kg",
         image: food_14,
         price: 320.00,
-        description: "5 kilograms",
-        category: "It offers the perfect blend of softness and stickiness, with a natural, sweet fragrance that elevates every meal. This 100% pure Dinorado rice is always fresh from the newest harvest, ensuring premium quality, delicious and chemical-free grains.",
+        description: "It offers the perfect blend of softness and stickiness, with a natural, sweet fragrance that elevates every meal. This 100% pure Dinorado rice is always fresh from the newest harvest, ensuring premium quality, delicious and chemical-free grains.",
+        category: "Pure Dinurado",
         stock: "10"
     },
     {
         _id: "15",
-        name: "Master Chef Premium Dinorado 5kg",
+        name: "Lipeno C-4 Dinurado 5kg",
         image: food_15,
         price: 350.00,
         description: "C-4 Dinurado promises fresh and new harvest rice with unmatched quality. Enjoy perfectly white grains that are soft and sticky, with a fragrant aroma.",
-        category: "Dinurado",
+        category: "C-4 Dinurado",
         stock: "10"
     }
 ]

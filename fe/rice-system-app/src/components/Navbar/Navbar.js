@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import { assets } from '../../assets/assets';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = ({ setShowLogin }) => {
+  const navigate = useNavigate();
   const [menu, setMenu] = useState("home");
+
+  const handleMenuClick = (menuItem) => {
+    setMenu(menuItem);
+    if (menuItem === "menu") {
+      navigate('/menu');
+    } else if (menuItem === "home") {
+      navigate('/');
+    }
+  };
 
   return (
     <div className="navbar">
@@ -13,25 +23,25 @@ const Navbar = ({ setShowLogin }) => {
       </Link>
       <ul className="navbar-menu">
         <li
-          onClick={() => setMenu("home")}
+          onClick={() => handleMenuClick("home")}
           className={menu === "home" ? "active" : ""}
         >
           HOME
         </li>
         <li
-          onClick={() => setMenu("menu")}
+          onClick={() => handleMenuClick("menu")}
           className={menu === "menu" ? "active" : ""}
         >
           MENU
         </li>
         <li
-          onClick={() => setMenu("app")}
+          onClick={() => handleMenuClick("app")}
           className={menu === "app" ? "active" : ""}
         >
           APP
         </li>
         <li
-          onClick={() => setMenu("contact-us")}
+          onClick={() => handleMenuClick("contact-us")}
           className={menu === "contact-us" ? "active" : ""}
         >
           CONTACT US

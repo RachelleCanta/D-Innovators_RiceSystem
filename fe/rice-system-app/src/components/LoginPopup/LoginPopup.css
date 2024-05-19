@@ -54,7 +54,7 @@
   
   .login-popup-button-wrapper {
     display: flex;
-    justify-content: center; /* Center the button horizontally */
+    justify-content: center;
   }
   
   .login-popup-container button {
