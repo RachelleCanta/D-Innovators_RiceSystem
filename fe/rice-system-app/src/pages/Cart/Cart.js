@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Cart.css';
 import { StoreContext } from '../../context/StoreContext';
 import { food_list } from '../../assets/assets';
@@ -7,10 +8,12 @@ import { assets } from '../../assets/assets';
 const Cart = ({ onClose }) => {
   const { cartItems, removeFromCart } = useContext(StoreContext);
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const navigate = useNavigate();
 
   const handleConfirmClose = () => {
     onClose(); // Call the onClose function to close the cart
     setShowConfirmation(false); // Close the confirmation dialog
+    navigate('/'); // Navigate to the home page
   };
 
   const handleCancelClose = () => {
@@ -48,21 +51,24 @@ const Cart = ({ onClose }) => {
                 <div key={index} className="cart-items-item">
                   <img src={item.image} alt="" />
                   <p>{item.name}</p>
-                  <p>${item.price.toFixed(2)}</p>
+                  <p>₱ {item.price.toFixed(2)}</p>
                   <p>{itemQuantity}</p>
-                  <p>${calculateTotalPrice(id, itemQuantity).toFixed(2)}</p>
+                  <p>₱ {calculateTotalPrice(id, itemQuantity).toFixed(2)}</p>
                   <button onClick={() => removeFromCart(id)}>Remove</button>
                 </div>
               );
             }
+            return null; // Ensure to return null if item is not found or itemQuantity is 0
           })}
         </div>
       </div>
       {showConfirmation && (
         <div className="confirmation-dialog">
           <p>Are you sure you want to close the cart?</p>
-          <button onClick={handleConfirmClose} alt="Close ">Yes</button>
-          <button onClick={handleCancelClose}>No</button>
+          <div className="button-group">
+            <button onClick={handleConfirmClose} alt="Close">Yes</button>
+            <button onClick={handleCancelClose}>No</button>
+          </div>
         </div>
       )}
     </div>
