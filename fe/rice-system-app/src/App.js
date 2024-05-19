@@ -29,6 +29,8 @@ const App = () => {
             <Route path='/checkout' element={<PlaceOrder />} />
             <Route path='/track-order' element={<TrackOrder />} />
             <Route path='/menu' element={<Menu />} />
+            <Route path='/contact-us' element={<Menu />} />
+
           </Routes>
         </BrowserRouter>
       </div>

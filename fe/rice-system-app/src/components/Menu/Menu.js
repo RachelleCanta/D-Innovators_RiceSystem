@@ -17,7 +17,6 @@ const Menu = () => {
       setCurrentTime(now.toLocaleTimeString('en-PH', { timeZone: 'Asia/Manila' }));
       setCurrentDate(now.toLocaleDateString('en-PH', { timeZone: 'Asia/Manila' }));
 
-      // Check if the shop is open
       setIsShopOpen(hours >= 9 && hours < 23);
 
       updateShopSchedule();
@@ -32,7 +31,8 @@ const Menu = () => {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const today = daysOfWeek[day];
 
-    const isOpen = isShopOpen ? `Open today from 9am to 11pm` : `Closed today`;
+    // Adjusted the shop schedule text
+    const isOpen = isShopOpen ? `Open from Monday-Saturday, 9am to 11pm` : `Closed today`;
     setShopSchedule(isOpen);
   };
 

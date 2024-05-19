@@ -13,7 +13,15 @@ const Navbar = ({ setShowLogin }) => {
       navigate('/menu');
     } else if (menuItem === "home") {
       navigate('/');
+    } else if (menuItem === "app") {
+      // Scroll to the footer section when clicking "App"
+      const footerSection = document.getElementById('footer');
+      footerSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleCartClick = () => {
+    navigate('/contact');
   };
 
   return (
@@ -47,16 +55,13 @@ const Navbar = ({ setShowLogin }) => {
           CONTACT US
         </li>
       </ul>
-      <div className="navbar-right">
-        <img src={assets.search_icon} width="45" height="50" alt="Search" />
-        <div className="navbar-search-icon">
-          <div className="dot"></div>
-        </div>
-        <Link to="/cart">
-          <img src={assets.basket_icon} width="45" height="50" alt="Basket" />
-        </Link>
-        <button onClick={() => setShowLogin(true)}>SIGN IN</button>
+      <div className="navbar-cart-icon" onClick={handleCartClick}>
+        <div className="dot"></div>
       </div>
+      <Link to="/cart">
+        <img src={assets.basket_icon} width="45" height="50" alt="Basket" />
+      </Link>
+      <button onClick={() => setShowLogin(true)}>SIGN IN</button>
     </div>
   );
 };

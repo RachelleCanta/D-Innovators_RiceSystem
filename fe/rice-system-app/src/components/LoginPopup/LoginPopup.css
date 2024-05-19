@@ -73,7 +73,7 @@
     align-items: start;
     gap: 8px;
     margin-top: 10px;
-    margin-bottom: 20px; /* Add space below the condition section */
+    margin-bottom: 20px;
   }
   
   .login-popup-condition input {

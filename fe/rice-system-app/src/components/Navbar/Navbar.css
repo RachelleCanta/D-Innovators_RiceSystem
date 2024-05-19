@@ -47,11 +47,7 @@
     cursor: pointer;
 }
 
-.navbar-search-icon {
-    position: relative;
-}
-
-.navbar-search-icon .dot {
+.navbar-cart-icon .dot {
     position: absolute;
     min-width: 10px;
     min-height: 10px;
@@ -89,7 +85,7 @@
       padding: 8px 16px; 
     }
   
-    .navbar-search-icon .dot {
+    .navbar-cart-icon .dot {
       right: -42px;
     }
   }
@@ -112,11 +108,7 @@
         font-size: 12px;
     }
 
-    .navbar-search-icon {
-        position: relative;
-    }
-
-    .navbar-search-icon .dot {
+    .navbar-cart-icon .dot{
         top: -15px;
         right: -50px;
     }
