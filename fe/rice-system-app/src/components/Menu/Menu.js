@@ -31,8 +31,7 @@ const Menu = () => {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const today = daysOfWeek[day];
 
-    // Adjusted the shop schedule text
-    const isOpen = isShopOpen ? `Open from Monday-Saturday, 9am to 11pm` : `Closed today`;
+    const isOpen = isShopOpen ? `Open from Monday-Saturday, 9am to 11pm. Estimated delivery in 2-3 days.` : `Closed today. Next delivery in 2-3 days.`;
     setShopSchedule(isOpen);
   };
 
@@ -42,29 +41,34 @@ const Menu = () => {
 
   return (
     <div className="menu-page">
-      <div className="dashboard">
-        <h2>Available Rice Product</h2>
-        <ul>
-          {menu_list.map((item) => (
-            <li key={item.menu_name} onClick={() => handleCategoryClick(item.menu_name)}>
-              <img src={item.menu_image} alt={item.menu_name} />
-              <span>{item.menu_name}</span>
-            </li>
-          ))}
-        </ul>
+      <div className="info-section">
+        <div className="schedule">
+          <h2>SHOP SCHEDULE</h2>
+          <p>{shopSchedule}</p>
+          {!isShopOpen && <p>SHOP IS ALREADY CLOSED</p>}
+        </div>
+        <div className="clock">
+          <h3>Current Date and Time (Philippine Time)</h3>
+          <p>Date: {currentDate}</p>
+          <p>Time: {currentTime}</p>
+        </div>
       </div>
-      <div className="menu-display">
-        {selectedCategory && <FoodDisplay category={selectedCategory} />}
-      </div>
-      <div className="schedule">
-        <h2>SHOP SCHEDULE</h2>
-        <p>{shopSchedule}</p>
-        {!isShopOpen && <p>SHOP IS ALREADY CLOSED</p>}
-      </div>
-      <div className="clock">
-        <h2>Current Date and Time (Philippine Time)</h2>
-        <p>Date: {currentDate}</p>
-        <p>Time: {currentTime}</p>
+      <div className="main-section">
+        <div className="dashboard">
+          <h2>Available Rice Product</h2>
+          <ul>
+            {menu_list.map((item) => (
+              <li key={item.menu_name} onClick={() => handleCategoryClick(item.menu_name)}>
+                <img src={item.menu_image} alt={item.menu_name} />
+                <span>{item.menu_name}</span>
+                <span className="top-brand">Top Rice Brand</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="menu-display">
+          {selectedCategory && <FoodDisplay category={selectedCategory} />}
+        </div>
       </div>
     </div>
   );

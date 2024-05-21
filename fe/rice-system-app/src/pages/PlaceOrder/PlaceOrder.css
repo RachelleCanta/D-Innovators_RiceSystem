@@ -1,40 +1,45 @@
 .place-order {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .place-order h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .billing-form label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .billing-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  .billing-form button {
-    background-color: #28543C;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .billing-form button:hover {
-    background-color: #28543C;
-  }
-  
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.place-order h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.place-order label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+.place-order input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.place-order button[type="submit"] {
+  padding: 12px 24px;
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.place-order button[type="submit"]:hover {
+  background-color: #ff7f33;
+}

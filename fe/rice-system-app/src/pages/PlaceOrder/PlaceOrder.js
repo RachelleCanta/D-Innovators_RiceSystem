@@ -23,9 +23,18 @@ const PlaceOrder = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const currentDate = new Date();
+    const estimatedDeliveryDate = new Date();
+    estimatedDeliveryDate.setDate(currentDate.getDate() + 2);
+
     console.log('Order placed:', billingInfo);
-    // Assuming '/track-order' is the route for tracking the order
-    navigate('/track-order');
+    navigate('/track-order', {
+      state: {
+        billingInfo,
+        orderDate: currentDate.toISOString(),
+        estimatedDeliveryDate: estimatedDeliveryDate.toISOString()
+      }
+    });
   };
 
   return (
