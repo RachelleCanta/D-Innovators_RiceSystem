@@ -72,7 +72,7 @@
 
 .promo-code button {
   padding: 10px;
-  background-color: #ff6600;
+  background-color: #28543C;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -88,16 +88,32 @@
   text-align: right;
   margin-top: 20px;
   font-size: 1.2rem;
+  justify-content: space-between;
 }
 
 .cart-actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-top: 20px;
 }
 
+.cart-actions button{
+  background-color: #28543C;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+}
+
+.cart-actions button:hover{
+  background-color: #28543C;
+}
+
 .checkout-button {
-  background-color: #ff6600;
+  background-color: #28543C;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -144,7 +160,7 @@
 }
 
 .confirmation-dialog button:hover {
-  background-color: #28543C;
+  background-color: #ff7f33;
 }
 
 .cart-items-item .item-actions {
@@ -163,5 +179,15 @@
 }
 
 .cart-items-item .item-actions button:hover {
-  background-color: #28543C;
+  background-color: #ff7f33;
+}
+
+.back-button {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.place-order-button {
+  margin-bottom: 20px;
+  text-align: right;
 }

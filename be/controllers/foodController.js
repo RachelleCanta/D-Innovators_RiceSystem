@@ -14,7 +14,8 @@ const addFood = async (req, res) => {
         description: req.body.description,
         price: req.body.price, // Ensure price field is included
         category: req.body.category,
-        image: image_filename
+        image: image_filename,
+        stocks: req.body.stocks
     });
 
     try {
