@@ -8,7 +8,9 @@ import Footer from './components/Footer/Footer';
 import LoginPopup from './components/LoginPopup/LoginPopup';
 import Menu from './components/Menu/Menu';
 import StoreProvider from './context/StoreContext';
-import TrackOrder from './pages/TrackOrder.js/TrackOrder';
+import TrackOrder from './pages/TrackOrder/TrackOrder';
+import ContactUs from './components/ContactUs/ContactUs';
+import AppDownload from './components/AppDownload/AppDownload';
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -29,7 +31,9 @@ const App = () => {
             <Route path='/checkout' element={<PlaceOrder />} />
             <Route path='/track-order' element={<TrackOrder />} />
             <Route path='/menu' element={<Menu />} />
-            <Route path='/contact-us' element={<Menu />} />
+            <Route path='/contact-us' element={<ContactUs />} />
+            <Route path='/app' element={<AppDownload />} />
+            <Route path='/contact-us' element={<ContactUs />}/>
 
           </Routes>
         </BrowserRouter>

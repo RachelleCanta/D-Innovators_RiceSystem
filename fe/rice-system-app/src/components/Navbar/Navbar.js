@@ -14,9 +14,9 @@ const Navbar = ({ setShowLogin }) => {
     } else if (menuItem === "home") {
       navigate('/');
     } else if (menuItem === "app") {
-      // Scroll to the footer section when clicking "App"
-      const footerSection = document.getElementById('footer');
-      footerSection.scrollIntoView({ behavior: 'smooth' });
+      navigate('/app');
+    } else if (menuItem === "contact-us") {
+      navigate('/contact-us');
     }
   };
 

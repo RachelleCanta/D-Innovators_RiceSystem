@@ -1,0 +1,24 @@
+.contact-us {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+  }
+  
+  .contact-us h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 15px;
+  }
+  
+  .contact-us p {
+    font-size: 1rem;
+    color: #666666;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  
