@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import "./FoodItem.css";
 import { StoreContext } from "../../context/StoreContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const FoodItem = ({ id, name, description, price, image, stock }) => {
   const { addToCart, removeFromCart, cartItems } = useContext(StoreContext);
@@ -14,10 +16,12 @@ const FoodItem = ({ id, name, description, price, image, stock }) => {
   const handleAddToCart = () => {
     addToCart(id, quantity);
     setQuantity(1);
+    toast.success(`${name} added to cart.`);
   };
 
   const handleRemoveFromCart = () => {
     removeFromCart(id);
+    toast.error(`${name} removed from cart.`);
   };
 
   return (
@@ -45,6 +49,7 @@ const FoodItem = ({ id, name, description, price, image, stock }) => {
         />
         <button onClick={handleAddToCart}>Add</button>
       </div>
+      <ToastContainer />
     </div>
   );
 };

@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { menu_list } from "../../assets/assets";
 import './Menu.css';
 import FoodDisplay from '../FoodDisplay/FoodDisplay';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Menu = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -9,6 +12,7 @@ const Menu = () => {
   const [currentDate, setCurrentDate] = useState('');
   const [shopSchedule, setShopSchedule] = useState('');
   const [isShopOpen, setIsShopOpen] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,12 +35,26 @@ const Menu = () => {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const today = daysOfWeek[day];
 
-    const isOpen = isShopOpen ? `Open from Monday-Saturday, 9am to 11pm. Estimated delivery in 2-3 days.` : `Closed today. Next delivery in 2-3 days.`;
+    const isOpen = isShopOpen ? `Open from Monday-Saturday, 9am to 11pm. Estimated Delivery in 2-3 days.` : `Closed today. Next delivery in 2-3 days.`;
     setShopSchedule(isOpen);
   };
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
+  };
+
+  const handleBackButtonClick = () => {
+    navigate('/');
+  };
+
+  const handleAddToCart = (item) => {
+    // Add logic to add item to cart
+    toast.success(`${item.menu_name} added to cart.`);
+  };
+
+  const handleRemoveFromCart = (item) => {
+    // Add logic to remove item from cart
+    toast.error(`${item.menu_name} removed from cart.`);
   };
 
   return (
@@ -52,6 +70,7 @@ const Menu = () => {
           <p>Date: {currentDate}</p>
           <p>Time: {currentTime}</p>
         </div>
+        <button className="back-button" onClick={handleBackButtonClick}>Back</button>
       </div>
       <div className="main-section">
         <div className="dashboard">
@@ -62,6 +81,8 @@ const Menu = () => {
                 <img src={item.menu_image} alt={item.menu_name} />
                 <span>{item.menu_name}</span>
                 <span className="top-brand"></span>
+                <button onClick={() => handleAddToCart(item)}>Add</button>
+                <button onClick={() => handleRemoveFromCart(item)}>Remove</button>
               </li>
             ))}
           </ul>

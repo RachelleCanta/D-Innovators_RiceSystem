@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ContactUs.css';
 
 const ContactUs = () => {
@@ -6,6 +7,7 @@ const ContactUs = () => {
   const [currentDate, setCurrentDate] = useState('');
   const [shopSchedule, setShopSchedule] = useState('');
   const [isShopOpen, setIsShopOpen] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -14,7 +16,7 @@ const ContactUs = () => {
       setCurrentTime(now.toLocaleTimeString('en-PH', { timeZone: 'Asia/Manila' }));
       setCurrentDate(now.toLocaleDateString('en-PH', { timeZone: 'Asia/Manila' }));
 
-      setIsShopOpen(hours >= 9 && hours < 23); 
+      setIsShopOpen(hours >= 9 && hours < 23);
 
       updateShopSchedule();
     }, 1000);
@@ -32,8 +34,13 @@ const ContactUs = () => {
     setShopSchedule(isOpen);
   };
 
+  const handleBackButtonClick = () => {
+    navigate('/');
+  };
+
   return (
     <div className="contact-us">
+      <button className="back-button" onClick={handleBackButtonClick}>Back</button>
       <h2>SHOP SCHEDULE</h2>
       <p>{shopSchedule}</p>
       <p>Contact Number: 09776214212</p>

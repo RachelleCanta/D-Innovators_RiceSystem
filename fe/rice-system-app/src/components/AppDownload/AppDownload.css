@@ -1,9 +1,27 @@
 .app-download {
+  position: relative;
   margin: auto auto;
   margin-top: 100px;
   font-size: max(36px, 20px);
   text-align: center;
   font-weight: 500;
+}
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #ff7f33;
 }
 
 .app-download-platforms {

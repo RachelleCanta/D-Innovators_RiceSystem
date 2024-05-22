@@ -4,7 +4,8 @@ import Header from '../../components/Header/Header';
 import ExploreMenu from '../../components/ExploreMenu/ExploreMenu';
 import Footer from '../../components/Footer/Footer';
 import AppDownload from '../../components/AppDownload/AppDownload';
-import FoodDisplay from '../../components/FoodDisplay/FoodDisplay';
+import FoodDisplay from '../../components/FoodDisplay/FoodDisplay'; 
+import FoodItem from '../../components/FoodItem/FoodItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
@@ -23,6 +24,16 @@ const Home = () => {
       <Header />
       <ExploreMenu setCategory={setCategory} />
       <FoodDisplay category={category} />
+      <div className="food-items-container">
+        <FoodItem 
+          id={1}
+          name="Sample Food Item"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          price={9.99}
+          image="https://via.placeholder.com/150"
+          stock={10}
+        />
+      </div>
       <Footer />
       <AppDownload />
       <ScrollToTopButton onClick={handleScrollToTop} />
