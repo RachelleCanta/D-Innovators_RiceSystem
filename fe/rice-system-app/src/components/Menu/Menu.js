@@ -61,7 +61,7 @@ const Menu = () => {
               <li key={item.menu_name} onClick={() => handleCategoryClick(item.menu_name)}>
                 <img src={item.menu_image} alt={item.menu_name} />
                 <span>{item.menu_name}</span>
-                <span className="top-brand">Top Rice Brand</span>
+                <span className="top-brand"></span>
               </li>
             ))}
           </ul>

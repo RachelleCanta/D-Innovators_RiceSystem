@@ -5,7 +5,7 @@ import { menu_list } from '../../assets/assets';
 const ExploreMenu = ({ setCategory }) => {
   const handleClick = (brandName) => {
     setCategory(brandName);
-    scrollToTopBrands(); // Scroll to top rice brands
+    scrollToTopBrands();
   };
 
   const scrollToTopBrands = () => {

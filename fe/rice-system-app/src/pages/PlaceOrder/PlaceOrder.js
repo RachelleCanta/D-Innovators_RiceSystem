@@ -28,7 +28,7 @@ const PlaceOrder = () => {
     estimatedDeliveryDate.setDate(currentDate.getDate() + 2);
 
     console.log('Order placed:', billingInfo);
-    navigate('/track-order', {
+    navigate('/payment-method', {
       state: {
         billingInfo,
         orderDate: currentDate.toISOString(),
@@ -39,7 +39,7 @@ const PlaceOrder = () => {
 
   return (
     <div className="place-order">
-      <h2>Billing Information</h2>
+      <h2>Delivery Information</h2>
       <form onSubmit={handleSubmit} className="billing-form">
         <label>
           Name:

@@ -8,9 +8,11 @@ import Footer from './components/Footer/Footer';
 import LoginPopup from './components/LoginPopup/LoginPopup';
 import Menu from './components/Menu/Menu';
 import StoreProvider from './context/StoreContext';
-import TrackOrder from './pages/TrackOrder/TrackOrder';
 import ContactUs from './components/ContactUs/ContactUs';
 import AppDownload from './components/AppDownload/AppDownload';
+import PaymentMethod from './pages/PaymentMethod/PaymentMethod';
+import OrderConfirmation from './pages/OrderConfirmation/OrderConfirmation';
+
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -29,7 +31,8 @@ const App = () => {
             <Route path='/' element={<Home />} />
             <Route path='/cart' element={<Cart onClose={handleCloseCart} />} />
             <Route path='/checkout' element={<PlaceOrder />} />
-            <Route path='/track-order' element={<TrackOrder />} />
+            <Route path="/payment-method" element={<PaymentMethod />} />
+            <Route path='/order-confirmation' element={<OrderConfirmation />} />
             <Route path='/menu' element={<Menu />} />
             <Route path='/contact-us' element={<ContactUs />} />
             <Route path='/app' element={<AppDownload />} />

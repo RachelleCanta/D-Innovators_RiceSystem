@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Cart.css';
 import { StoreContext } from '../../context/StoreContext';
 import { food_list, assets } from '../../assets/assets';
 
 const Cart = ({ onClose }) => {
-  const { cartItems, removeFromCart } = useContext(StoreContext);
+  const { cartItems, removeFromCart, addToCart } = useContext(StoreContext);
   const [promoCode, setPromoCode] = useState('');
   const [discount, setDiscount] = useState(0);
   const [showCloseConfirmation, setShowCloseConfirmation] = useState(false);
@@ -21,9 +23,9 @@ const Cart = ({ onClose }) => {
   const handleApplyPromoCode = () => {
     if (validPromoCodes[promoCode]) {
       setDiscount(validPromoCodes[promoCode]);
-      alert(`Promo code applied! You got ${validPromoCodes[promoCode]}% off.`);
+      toast.success(`Promo code applied! You got ${validPromoCodes[promoCode]}% off.`);
     } else {
-      alert('Invalid promo code.');
+      toast.error('Invalid promo code.');
       setDiscount(0);
     }
   };
@@ -66,6 +68,18 @@ const Cart = ({ onClose }) => {
 
   const discountedTotal = calculateDiscountedTotal(total);
 
+  const handleAddToCart = (id) => {
+    addToCart(id);
+    const item = food_list.find((item) => item._id === id);
+    toast.success(`Added ${item.name} to cart.`);
+  };
+
+  const handleRemoveFromCart = (id) => {
+    removeFromCart(id);
+    const item = food_list.find((item) => item._id === id);
+    toast.error(`Removed ${item.name} from cart.`);
+  };
+
   return (
     <div className="cart">
       <div className="cart-content">
@@ -80,7 +94,7 @@ const Cart = ({ onClose }) => {
             <p>Price</p>
             <p>Quantity</p>
             <p>Total</p>
-            <p>Remove</p>
+            <p>Actions</p>
           </div>
           <br />
           <hr />
@@ -95,7 +109,10 @@ const Cart = ({ onClose }) => {
                   <p>₱ {item.price.toFixed(2)}</p>
                   <p>{itemQuantity}</p>
                   <p>₱ {calculateTotalPrice(id, itemQuantity).toFixed(2)}</p>
-                  <button onClick={() => removeFromCart(id)}>Remove</button>
+                  <div className="item-actions">
+                    <button onClick={() => handleRemoveFromCart(id)}>Remove</button>
+                    <button onClick={() => handleAddToCart(id)}>Add</button>
+                  </div>
                 </div>
               );
             }
@@ -138,13 +155,16 @@ const Cart = ({ onClose }) => {
 
       {showCheckoutConfirmation && (
         <div className="confirmation-dialog">
-          <p>Are you sure you want to proceed to checkout?</p>
+          <p>Are you sure you want to proceed
+          to checkout?</p>
           <div className="button-group">
             <button onClick={handleConfirmCheckout} alt="Proceed">Yes</button>
             <button onClick={handleCancelCheckout}>No</button>
           </div>
         </div>
       )}
+
+      <ToastContainer />
     </div>
   );
 };
