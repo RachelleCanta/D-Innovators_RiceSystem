@@ -69,6 +69,10 @@ const PlaceOrder = () => {
           Phone:
           <input type="text" name="phone" value={billingInfo.phone} onChange={handleChange} required />
         </label>
+        <label>
+          Payment Option:
+          <input type="text" name="payment-option" value={billingInfo.paymentoption} onChange={handleChange} required />
+        </label>
         <button type="submit">Place Order</button>
       </form>
     </div>

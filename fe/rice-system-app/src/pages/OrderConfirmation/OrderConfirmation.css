@@ -30,7 +30,7 @@
     display: block;
     width: 100%;
     padding: 12px 24px;
-    background-color: #ff6600;
+    background-color: #28543C;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -40,6 +40,6 @@
   }
   
   .order-confirmation button:hover {
-    background-color: #ff7f33;
+    background-color: #28543C;
   }
   

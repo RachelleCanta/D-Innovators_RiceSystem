@@ -41,9 +41,15 @@ const PaymentMethod = () => {
           <img src={mayaQrCode} alt="MAYA QR Code" />
         </div>
       </div>
-      <p>Please scan or save the QR code before you proceed with order</p>
-      <button onClick={handleProceed}>Proceed with Order</button>
       
+      <p>Please scan or save the QR code before you proceed with order</p>
+      <div className="cod-payment">
+        <h2>Cash on Delivery</h2>
+        <p></p>
+        <p>PHONE NUMBER: +639776214501</p>
+      </div>
+      <button onClick={handleProceed}>Proceed with Order</button>
+     
       {selectedQrCode && (
         <div className="modal">
           <div className="modal-content">

@@ -48,12 +48,10 @@ const Menu = () => {
   };
 
   const handleAddToCart = (item) => {
-    // Add logic to add item to cart
     toast.success(`${item.menu_name} added to cart.`);
   };
 
   const handleRemoveFromCart = (item) => {
-    // Add logic to remove item from cart
     toast.error(`${item.menu_name} removed from cart.`);
   };
 
@@ -81,8 +79,8 @@ const Menu = () => {
                 <img src={item.menu_image} alt={item.menu_name} />
                 <span>{item.menu_name}</span>
                 <span className="top-brand"></span>
-                <button onClick={() => handleAddToCart(item)}>Add</button>
-                <button onClick={() => handleRemoveFromCart(item)}>Remove</button>
+                {/* <button onClick={() => handleAddToCart(item)}>Add</button>
+                <button onClick={() => handleRemoveFromCart(item)}>Remove</button> */}
               </li>
             ))}
           </ul>
