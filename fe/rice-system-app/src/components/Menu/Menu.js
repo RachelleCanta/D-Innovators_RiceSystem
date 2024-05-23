@@ -35,7 +35,7 @@ const Menu = () => {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const today = daysOfWeek[day];
 
-    const isOpen = isShopOpen ? `Open from Monday-Saturday, 9am to 11pm. Estimated Delivery in 2-3 days.` : `Closed today. Next delivery in 2-3 days.`;
+    const isOpen = isShopOpen ? `Open from Monday-Saturday, 9am to 6pm. Estimated Delivery in 1-3 days.` : `Closed today. Next delivery in 2-3 days.`;
     setShopSchedule(isOpen);
   };
 

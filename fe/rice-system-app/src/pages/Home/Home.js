@@ -24,17 +24,6 @@ const Home = () => {
       <Header />
       <ExploreMenu setCategory={setCategory} />
       <FoodDisplay category={category} />
-      <div className="food-items-container">
-        <FoodItem 
-          id={1}
-          name="Sample Food Item"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-          price={9.99}
-          image="https://via.placeholder.com/150"
-          stock={10}
-        />
-      </div>
-      <Footer />
       <AppDownload />
       <ScrollToTopButton onClick={handleScrollToTop} />
     </div>
