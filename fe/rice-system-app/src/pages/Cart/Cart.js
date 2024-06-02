@@ -130,15 +130,17 @@ const Cart = ({ onClose }) => {
           <button onClick={handleApplyPromoCode}>Apply</button>
         </div>
 
+        <div className="cart-actions">
+          <button type="button" onClick={() => navigate('/menu')}>Back to add more products? Click here!</button>
+        </div>
+
         <div className="cart-total">
           <p>Total: ₱ {total.toFixed(2)}</p>
           <p>Discount: {discount}%</p>
           <p>Discounted Total: ₱ {discountedTotal.toFixed(2)}</p>
-        </div>
-        
-        <div className="cart-actions">
+          <p className="place-order-button">Ready to checkout? Place your order now.</p>
           <button className="checkout-button" onClick={() => setShowCheckoutConfirmation(true)}>
-            Proceed to Checkout
+            Place Order
           </button>
         </div>
       </div>
@@ -155,15 +157,14 @@ const Cart = ({ onClose }) => {
 
       {showCheckoutConfirmation && (
         <div className="confirmation-dialog">
-          <p>Are you sure you want to proceed
-          to checkout?</p>
+          <p>Are you sure you want to proceed to checkout?</p>
           <div className="button-group">
             <button onClick={handleConfirmCheckout} alt="Proceed">Yes</button>
             <button onClick={handleCancelCheckout}>No</button>
           </div>
         </div>
       )}
-
+        
       <ToastContainer />
     </div>
   );

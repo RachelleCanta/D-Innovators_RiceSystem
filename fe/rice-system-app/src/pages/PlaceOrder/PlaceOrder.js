@@ -39,9 +39,9 @@ const PlaceOrder = () => {
 
   return (
     <div className="place-order">
-      <h2>Delivery Information</h2>
-      <form onSubmit={handleSubmit} className="billing-form">
-        <label>
+  <h2>Delivery Information</h2>
+  <form onSubmit={handleSubmit} className="billing-form">
+  <label>
           Name:
           <input type="text" name="name" value={billingInfo.name} onChange={handleChange} required />
         </label>
@@ -69,13 +69,15 @@ const PlaceOrder = () => {
           Phone:
           <input type="text" name="phone" value={billingInfo.phone} onChange={handleChange} required />
         </label>
-        <label>
-          Payment Option:
-          <input type="text" name="payment-option" value={billingInfo.paymentoption} onChange={handleChange} required />
-        </label>
-        <button type="submit">Place Order</button>
-      </form>
+       
+    <div className="button-container">
+      <button type="button" onClick={() => navigate('/cart')}>Back</button>
+      <button type="submit">Place Order</button>
     </div>
+  </form>
+</div>
+
+    
   );
 };
 

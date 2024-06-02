@@ -1,113 +1,177 @@
 .payment-method {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .payment-method h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .qr-code-container {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-    cursor: pointer;
-  }
-  
-  .qr-code {
-    text-align: center;
-  }
-  
-  .qr-code img {
-    width: 150px;
-    height: 150px;
-    margin-top: 10px;
-  }
-  
-  .payment-method button {
-    display: block;
-    width: 100%;
-    padding: 12px 24px;
-    background-color: #ff6600;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .payment-method button:hover {
-    background-color: #ff7f33;
-  }
-  
-  .payment-method p {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #666;
-  }
-  
-  .modal {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
-    border-radius: 10px;
-  }
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .modal img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
-  .modal button {
-    padding: 10px 20px;
-    background-color: #ff6600;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .modal button:hover {
-    background-color: #ff7f33;
-  }
-  
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-method h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.qr-code-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.qr-code {
+  text-align: center;
+}
+
+.qr-code img {
+  width: 150px;
+  height: 150px;
+  margin-top: 10px;
+}
+
+.payment-method button {
+  display: block;
+  width: 100%;
+  padding: 12px 24px;
+  background-color: #28543C;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.payment-method button:hover {
+  background-color: #ff7f33;
+}
+
+.payment-method p {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.reference-no {
+  margin-bottom: 20px;
+}
+
+.reference-no label {
+  margin-right: 10px;
+}
+
+.reference-no input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.modal button {
+  padding: 10px 20px;
+  background-color: #28543C;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal button:hover {
+  background-color: #ff7f33;
+}
+
+.file-input-container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.choose-file-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #28543C;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.choose-file-button:hover {
+  background-color: #ff7f33;
+}
+
+.receipt-preview {
+  margin-top: 20px;
+}
+
+.receipt-preview h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.receipt-preview img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}

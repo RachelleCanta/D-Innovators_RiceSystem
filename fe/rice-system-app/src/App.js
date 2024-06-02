@@ -12,7 +12,8 @@ import ContactUs from './components/ContactUs/ContactUs';
 import AppDownload from './components/AppDownload/AppDownload';
 import PaymentMethod from './pages/PaymentMethod/PaymentMethod';
 import OrderConfirmation from './pages/OrderConfirmation/OrderConfirmation';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -37,9 +38,9 @@ const App = () => {
             <Route path='/contact-us' element={<ContactUs />} />
             <Route path='/app' element={<AppDownload />} />
             <Route path='/contact-us' element={<ContactUs />}/>
-
           </Routes>
         </BrowserRouter>
+        <ToastContainer />
       </div>
       <Footer />
     </StoreProvider>

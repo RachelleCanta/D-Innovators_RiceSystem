@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="footer-content">
                 <div className="footer-content-left">
                     <img src={assets.logo} width="100px" height="70px" alt=""/>
-                    <p>Lorem ipsum</p>
+                    <p>Simplifying Rice, Connecting Lives: ZGM Rice Shop envisions a world where rice transactions are effortlessly accessible, promoting connections between customers and owners. We see a future where ordering rice is as easy as a smile, fostering relationships that nourish communities.</p>
                     <div className="footer-social-icons">
                         <img src={assets.facebook_icon} alt=""/>
                         <img src={assets.twitter_icon} alt=""/>

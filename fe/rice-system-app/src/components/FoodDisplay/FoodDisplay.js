@@ -5,19 +5,17 @@ import { food_list } from "../../assets/assets";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 const FoodDisplay = ({ category }) => {
-  const filteredFood =
-    category === "All"
-      ? food_list
-      : food_list.filter((food) => food.category === category);
+  const filteredFood = category === "All"
+    ? food_list
+    : food_list.filter((food) => food.category === category);
 
   const notifyAdd = (name) => toast.success(`${name} added to cart`);
   const notifyRemove = (name) => toast.error(`${name} removed from cart`);
 
   return (
     <div className="food-display" id="food-display">
-      <h2>TOP RICE BRANDS</h2>
+      <h2>RICE BRANDS</h2>
       {filteredFood.map((item, index) => (
         <FoodItem
           key={index}
