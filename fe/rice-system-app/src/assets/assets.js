@@ -5,6 +5,9 @@ import search_icon from './search_icon.png'
 import play_store from './play_store.png'
 import app_store from './app_store.png'
 import cross_icon from './cross_icon.png'
+import profile_icon from './profile_icon.png'
+import bag_icon from './bag_icon.png'
+import logout_icon from './logout_icon.png'
 
 import menu_1 from '../assets/menu_1.png'
 import menu_2 from '../assets/menu_2.png'
@@ -38,7 +41,10 @@ export const assets = {
     header_img,
     play_store,
     app_store,
-    cross_icon
+    cross_icon,
+    profile_icon,
+    bag_icon,
+    logout_icon
 }
 
 export const menu_list = [
