@@ -1,0 +1,164 @@
+.add {
+  width: 150%;
+  margin-left: max(5vw, 25px);
+  margin-top: 50px; 
+  color: #6d6d6d;
+  font-size: 16px; 
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+}
+
+.add form {
+  gap: 20px; 
+}
+
+.add-img-upload img {
+  width: 120px;
+}
+
+.add-product-name,
+.product-description {
+  width: max(40%, 280px);
+}
+
+.add-product-name input,
+.product-description textarea {
+  padding: 10px;
+}
+
+.add-category-price {
+  display: flex;
+  gap: 30px;
+}
+
+.add-category-price select,
+.add-category-price input,
+.add-stocks {
+  max-width: 120px;
+  padding: 10px;
+}
+
+.add-btn {
+  max-width: 120px;
+  border: none;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+.add-img-upload {
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.add-img-upload img {
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  border: 2px dashed #28543C;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.add-img-upload p {
+  color: #28543C;
+  font-weight: bold;
+}
+
+.add-product-name input,
+.add-product-description textarea,
+.add-category select,
+.add-price input,
+.add-product-stocks input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 10px;
+  margin-top: 8px;
+  transition: border-color 0.2s;
+}
+
+.add-product-name input:focus,
+.add-product-description textarea:focus,
+.add-category select:focus,
+.add-price input:focus,
+.add-product-stocks input:focus {
+  border-color: #28543C;
+  outline: none;
+}
+
+.add-product-description textarea {
+  resize: vertical;
+}
+
+.add-category select {
+  height: 46px;
+}
+
+.add button {
+  padding: 12px 20px;
+  background-color: #28543C;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  align-self: flex-start;
+  margin-top: 20px;
+  transition: background-color 0.2s;
+}
+
+.add button:hover {
+  background-color: red;
+}
+
+.add-category p,
+.add-price p,
+.add-product-stocks p,
+.add-product-name p,
+.add-product-description p {
+  font-weight: bold;
+  color: #333;
+}
+
+@media (max-width: 1050px) {
+  .add {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .add-img-upload img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 750px) {
+  .add {
+    max-width: 400px;
+  }
+}
