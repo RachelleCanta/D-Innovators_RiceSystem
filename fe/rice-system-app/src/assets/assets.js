@@ -125,7 +125,7 @@ export const food_list = [
         image: food_7,
         price: 1290.00,
         description: "Jasmine Rice is moist and soft in texture when cooked, with a slightly sweet flavor. The grains cling and are somewhat sticky when cooked, though less sticky than glutinous rice, as it has less amylopection.",
-        category: "Dinurado",
+        category: "Jasmine",
         stock: "10"
     },
     {
@@ -170,7 +170,7 @@ export const food_list = [
         image: food_12,
         price: 285.00,
         description: "Princess Zara Jasmine Rice is a delight when cooked, offering a soft and slightly sticky texture. Each grain is deliciously flavorful and wonderfully fragrant, making every meal a special experience.",
-        category: "",
+        category: "Jasmine",
         stock: "10"
     },
     {
@@ -178,7 +178,7 @@ export const food_list = [
         name: "Lipeno Sinandomeng 5kg",
         image: food_13,
         price: 290.00,
-        description: "Sinandomeng is a household favorite in every Filipino home. Sinandomeng is characterized by long white grains and when cooked its grains are soft and fluffy for your perfect pair to any viand",
+        description: "Sinandomeng is a household favorite in every Filipino home. Sinandomeng is characterized by long white grains and when cooked its grains are soft and fluffy for your perfect pair to any viand.",
         category: "Sinandomeng",
         stock: "10"
     },
