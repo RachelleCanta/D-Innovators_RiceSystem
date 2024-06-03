@@ -41,14 +41,11 @@ const LoginPopup = ({ setShowLogin }) => {
       }
     } catch (error) {
       if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
+       
         alert(`Error: ${error.response.data.message}`);
       } else if (error.request) {
-        // The request was made but no response was received
         alert("No response from server. Please try again later.");
       } else {
-        // Something happened in setting up the request that triggered an Error
         alert(`Error: ${error.message}`);
       }
     }
@@ -62,12 +59,10 @@ const LoginPopup = ({ setShowLogin }) => {
           <img onClick={() => setShowLogin(false)} src={assets.cross_icon} alt="Close" />
         </div>
         <div className="login-popup-inputs">
-          {currState === "LOG IN" ? <></> : <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Enter Your Username:' required />}
-          <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Enter Your Email:' required />
+          {currState === "LOG IN" ? null : <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Enter Your Name' required />}
+          <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Enter Your Email' required />
           <input name='password' onChange={onChangeHandler} value={data.password} type={showPassword ? "text" : "password"} 
-            placeholder='Enter Your Password:' 
-            required 
-          />
+            placeholder='Enter Your Password' required />
         </div>
         <div className="show-password-container">
           <input 

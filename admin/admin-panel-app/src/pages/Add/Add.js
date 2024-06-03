@@ -68,11 +68,18 @@ const Add = ({url}) => {
           <p>Product Description</p>
           <select onChange={onChangeHandler} value={data.description} name="description">
             <option value="">Select Description</option>
-            <option value="Dinurado">DINURADO - Enjoy the finest grains of Mindoro's Crystal Dinurado Rice! 100% pure local rice, fresh-milled, soft and delicious even until the next day and chemical-free.</option>
-            <option value="Jasmine">JASMINE - Jasmine Rice is moist and soft in texture when cooked, with a slightly sweet flavor. The grains cling and are somewhat sticky when cooked, though less sticky than glutinous rice, as it has less amylopectin.</option>
-            <option value="Maharlika">MAHARLIKA - This premium rice is a long grain varietal that is white and fluffy. It has separating qualities and fragrance that make it a great choice for a wide variety of fried rice.</option>
-            <option value="Premium Rice">PREMIUM RICE - It is a special type of rice from the northeast of Vietnam that is of excellent quality and has a shiny and firm grain, a wonderfully soft taste, and a naturally fragrant aroma.</option>
-            <option value="Sinandomeng">SINANDOMENG - Sinandomeng is a household favorite in every Filipino home. Sinandomeng is characterized by long white grains and when cooked its grains are soft and fluffy for your perfect pair to any viand.</option>
+            <option value="Dinurado - Enjoy the finest grains of Mindoro's Crystal Dinurado Rice! 
+            100% pure local rice, fresh-milled, soft and delicious even until the next day and chemical-free.">DINURADO</option>
+            <option value="Jasmine - Jasmine Rice is moist and soft in texture when cooked, with a slightly sweet flavor. 
+            The grains cling and are somewhat sticky when cooked, though less sticky than glutinous rice, 
+            as it has less amylopectin.">JASMINE</option>
+            <option value="Maharlika - This premium rice is a long grain varietal that is white and fluffy. 
+            It has separating qualities and fragrance that make it a great choice for a wide variety of fried rice.">MAHARLIKA</option>
+            <option value="Premium Rice - It is a special type of rice from the northeast of Vietnam that is of excellent 
+            quality and has a shiny and firm grain, a wonderfully soft taste, and a naturally fragrant aroma.">PREMIUM RICE</option>
+            <option value="Sinandomeng - Sinandomeng is a household favorite in every Filipino home. 
+            Sinandomeng is characterized by long white grains and when cooked its 
+            grains are soft and fluffy for your perfect pair to any viand.<">SINANDOMENG</option>
           </select>
         </div>
         <div className="add-category-price">

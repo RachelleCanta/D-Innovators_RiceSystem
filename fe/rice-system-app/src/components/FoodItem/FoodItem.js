@@ -3,7 +3,7 @@ import "./FoodItem.css";
 import { StoreContext } from "../../context/StoreContext";
 
 const FoodItem = ({ id, name, description, price, image, stock, notifyAdd, notifyRemove }) => {
-  const { addToCart, removeFromCart, cartItems } = useContext(StoreContext);
+  const { addToCart, removeFromCart, cartItems, url} = useContext(StoreContext);
   const [quantity, setQuantity] = useState(1);
   const [itemQuantity, setItemQuantity] = useState(cartItems[id] || 0);
 

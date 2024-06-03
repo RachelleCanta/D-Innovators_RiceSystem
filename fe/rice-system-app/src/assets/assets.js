@@ -15,9 +15,6 @@ import menu_3 from '../assets/menu_3.png'
 import menu_4 from '../assets/menu_4.png'
 import menu_5 from '../assets/menu_5.png'
 
-
-
-
 import food_1 from '../assets/food_1.png'
 import food_2 from '../assets/food_2.png'
 import food_3 from '../assets/food_3.png'
