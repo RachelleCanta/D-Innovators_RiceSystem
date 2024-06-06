@@ -1,73 +1,97 @@
-import React, { createContext, useState, useEffect } from "react";
-import axios from "axios";
+// StoreContext.js
 
-export const StoreContext = createContext();
+import React, { createContext, useEffect, useState } from 'react';
+import axios from 'axios';
 
-const StoreProvider = ({ children }) => {
+export const StoreContext = createContext(null);
+
+const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
-  const [token, setToken] = useState(null);
-  const url = "http://localhost:4000";
-  const [food_list, setFoodList] = useState([]);
+  const [cartPrices, setCartPrices] = useState({});
+  const [additionals, setAdditionals] = useState({});
+  const [user, setUser] = useState(null);
+  const [token, setToken] = useState(localStorage.getItem('token'));
+  const [foodList, setFoodList] = useState([]);
+  const url = 'http://localhost:4001';
 
-  const addToCart = (itemId, quantity = 1) => {
-    setCartItems((prevItems) => {
-      const updatedCart = { ...prevItems };
-      updatedCart[itemId] = (updatedCart[itemId] || 0) + quantity;
-      return updatedCart;
-    });
+  const addToCart = async (itemId, quantity = 1) => {
+    setCartItems((prev) => ({ ...prev, [itemId]: (prev[itemId] || 0) + quantity }));
+    if (token) {
+      await axios.post(url + '/api/cart/add', { itemId, userId: token }, { headers: { token } });
+    }
   };
 
-  const removeFromCart = (itemId) => {
-    setCartItems((prevItems) => {
-      const updatedCart = { ...prevItems };
-      if (updatedCart[itemId] && updatedCart[itemId] > 0) {
-        updatedCart[itemId] -= 1;
+  const removeFromCart = async (itemId) => {
+    setCartItems((prev) => {
+      const newCount = (prev[itemId] || 0) - 1;
+      if (newCount <= 0) {
+        const { [itemId]: _, ...rest } = prev;
+        return rest;
       }
-      return updatedCart;
+      return { ...prev, [itemId]: newCount };
     });
+    if (token) {
+      await axios.post(url + '/api/cart/remove', { itemId, userId: token }, { headers: { token } });
+    }
   };
 
   const getTotalCartAmount = () => {
-    let totalAmount = 0;
-    for (const item in cartItems) {
-      totalAmount += cartItems[item];
-    }
-    return totalAmount;
+    return Object.entries(cartItems).reduce((total, [itemId, quantity]) => {
+      const item = foodList.find((food) => food._id === itemId);
+      return total + (item ? item.price * quantity : 0);
+    }, 0);
   };
 
   const fetchFoodList = async () => {
     try {
-      const response = await axios.get(`${url}/api/food/list`);
+      const response = await axios.get(url + '/api/food/list');
       setFoodList(response.data.data);
     } catch (error) {
-      console.error("Error fetching food list:", error);
+      console.error('Failed to fetch food list:', error);
+    }
+  };
+
+  const loadCartData = async (token) => {
+    try {
+      const response = await axios.post(url + '/api/cart/get', {}, { headers: { token } });
+      setCartItems(response.data.cartData);
+      setCartPrices(response.data.cartPrices);
+      setAdditionals(response.data.additionals);
+    } catch (error) {
+      console.error('Failed to load cart data:', error);
     }
   };
 
   useEffect(() => {
     async function loadData() {
       await fetchFoodList();
-      const storedToken = localStorage.getItem("token");
+      const storedToken = localStorage.getItem('token');
       if (storedToken) {
         setToken(storedToken);
+        await loadCartData(storedToken);
       }
     }
     loadData();
   }, []);
 
   const contextValue = {
+    foodList,
     cartItems,
-    setCartItems,
+    cartPrices,
+    additionals,
     addToCart,
     removeFromCart,
-    getTotalCartAmount,
-    url,
+    user,
     token,
     setToken,
-    food_list
+    getTotalCartAmount,
   };
 
-  return <StoreContext.Provider value={contextValue}>{children}</StoreContext.Provider>;
+  return (
+    <StoreContext.Provider value={contextValue}>
+      {props.children}
+    </StoreContext.Provider>
+  );
 };
 
-export default StoreProvider;
+export default StoreContextProvider;

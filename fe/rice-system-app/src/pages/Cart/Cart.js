@@ -31,8 +31,8 @@ const Cart = ({ onClose }) => {
   };
 
   const handleConfirmClose = () => {
-    onClose(); 
-    navigate('/'); 
+    onClose();
+    navigate('/');
   };
 
   const handleCancelClose = () => {
@@ -41,7 +41,7 @@ const Cart = ({ onClose }) => {
 
   const handleConfirmCheckout = () => {
     setShowCheckoutConfirmation(false);
-    navigate('/checkout'); 
+    navigate('/checkout');
   };
 
   const handleCancelCheckout = () => {
@@ -68,17 +68,26 @@ const Cart = ({ onClose }) => {
 
   const discountedTotal = calculateDiscountedTotal(total);
 
-  const handleAddToCart = (id) => {
-    addToCart(id);
+  const handleAddToCart = async (id) => {
     const item = food_list.find((item) => item._id === id);
-    toast.success(`Added ${item.name} to cart.`);
+    try {
+      await addToCart({ itemId: id, price: item.price }); // Ensure price is included
+      toast.success(`Added ${item.name} to cart.`);
+    } catch (error) {
+      toast.error('Failed to add item to cart.');
+    }
   };
-
-  const handleRemoveFromCart = (id) => {
-    removeFromCart(id);
-    const item = food_list.find((item) => item._id === id);
-    toast.error(`Removed ${item.name} from cart.`);
+  
+  const handleRemoveFromCart = async (id) => {
+    try {
+      await removeFromCart(id);
+      const item = food_list.find((item) => item._id === id);
+      toast.error(`Removed ${item.name} from cart.`);
+    } catch (error) {
+      toast.error('Failed to remove item from cart.');
+    }
   };
+  
 
   return (
     <div className="cart">

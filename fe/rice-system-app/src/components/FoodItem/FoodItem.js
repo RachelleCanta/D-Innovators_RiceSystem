@@ -1,10 +1,13 @@
-import React, { useContext, useState, useEffect } from "react";
-import "./FoodItem.css";
-import { StoreContext } from "../../context/StoreContext";
+// FoodItem.js
 
-const FoodItem = ({ id, name, description, price, image, stock, notifyAdd, notifyRemove }) => {
-  const { addToCart, removeFromCart, cartItems, url} = useContext(StoreContext);
+import React, { useContext, useState, useEffect } from 'react';
+import './FoodItem.css';
+import { StoreContext } from '../../context/StoreContext';
+
+const FoodItem = ({ id, name, description, price, image, stocks, notifyAdd, notifyRemove }) => {
+  const { addToCart, removeFromCart, cartItems } = useContext(StoreContext);
   const [quantity, setQuantity] = useState(1);
+  const port = 'http://localhost:4001';
   const [itemQuantity, setItemQuantity] = useState(cartItems[id] || 0);
 
   useEffect(() => {
@@ -14,24 +17,24 @@ const FoodItem = ({ id, name, description, price, image, stock, notifyAdd, notif
   const handleAddToCart = () => {
     addToCart(id, quantity);
     setQuantity(1);
-    notifyAdd(name); // Notify that item has been added to cart
+    notifyAdd(name);
   };
 
   const handleRemoveFromCart = () => {
     removeFromCart(id);
-    notifyRemove(name); // Notify that item has been removed from cart
+    notifyRemove(name);
   };
 
   return (
-    <div className="food-item">
-      <img src={image} alt={name} />
-      <div className="food-info">
+    <div className='food-item'>
+      <img src={port+"/images/" +image} alt={name} />
+      <div className='food-info'>
         <h2>{name}</h2>
         <p>{description}</p>
         <p>₱ {price.toFixed(2)}</p>
-        <p>Stock: {stock}</p>
+        <p>Stock: {stocks}</p>
       </div>
-      <div className="food-actions">
+      <div className='food-actions'>
         {itemQuantity > 0 && (
           <>
             <button onClick={handleRemoveFromCart}>Remove</button>
@@ -39,13 +42,12 @@ const FoodItem = ({ id, name, description, price, image, stock, notifyAdd, notif
           </>
         )}
         <input
-          type="number"
+          type='number'
+          min='1'
           value={quantity}
-          onChange={(e) => setQuantity(parseInt(e.target.value))}
-          min="1"
-          max={stock}
+          onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value)))}
         />
-        <button onClick={handleAddToCart}>Add</button>
+        <button onClick={handleAddToCart}>Add to Cart</button>
       </div>
     </div>
   );

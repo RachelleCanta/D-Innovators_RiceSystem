@@ -5,8 +5,8 @@ import { StoreContext } from '../../context/StoreContext';
 import axios from "axios";
 
 const LoginPopup = ({ setShowLogin }) => {
-  const { url, setToken } = useContext(StoreContext);
-
+  const { setToken } = useContext(StoreContext);
+  const url = 'http://localhost:4001';
   const [currState, setCurrState] = useState("LOG IN");
   const [showPassword, setShowPassword] = useState(false);
   const [data, setData] = useState({
@@ -40,8 +40,7 @@ const LoginPopup = ({ setShowLogin }) => {
         alert(response.data.message);
       }
     } catch (error) {
-      if (error.response) {
-       
+      if (error.response && error.response.data) {
         alert(`Error: ${error.response.data.message}`);
       } else if (error.request) {
         alert("No response from server. Please try again later.");

@@ -4,7 +4,7 @@ import Header from '../../components/Header/Header';
 import ExploreMenu from '../../components/ExploreMenu/ExploreMenu';
 import Footer from '../../components/Footer/Footer';
 import AppDownload from '../../components/AppDownload/AppDownload';
-import FoodDisplay from '../../components/FoodDisplay/FoodDisplay'; 
+// import FoodDisplay from '../../components/FoodDisplay/FoodDisplay'; 
 import FoodItem from '../../components/FoodItem/FoodItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
@@ -23,7 +23,7 @@ const Home = () => {
     <div>
       <Header />
       <ExploreMenu setCategory={setCategory} />
-      <FoodDisplay category={category} />
+      {/* <FoodDisplay category={category} /> */}
       <AppDownload />
       <ScrollToTopButton onClick={handleScrollToTop} />
     </div>
