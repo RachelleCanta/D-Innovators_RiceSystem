@@ -1,5 +1,3 @@
-// FoodItem.js
-
 import React, { useContext, useState, useEffect } from 'react';
 import './FoodItem.css';
 import { StoreContext } from '../../context/StoreContext';
@@ -7,7 +5,7 @@ import { StoreContext } from '../../context/StoreContext';
 const FoodItem = ({ id, name, description, price, image, stocks, notifyAdd, notifyRemove }) => {
   const { addToCart, removeFromCart, cartItems } = useContext(StoreContext);
   const [quantity, setQuantity] = useState(1);
-  const port = 'http://localhost:4001';
+  const url = 'http://localhost:4001';
   const [itemQuantity, setItemQuantity] = useState(cartItems[id] || 0);
 
   useEffect(() => {
@@ -27,7 +25,7 @@ const FoodItem = ({ id, name, description, price, image, stocks, notifyAdd, noti
 
   return (
     <div className='food-item'>
-      <img src={port+"/images/" +image} alt={name} />
+      <img src={url+"/images/" +image} alt={name} />
       <div className='food-info'>
         <h2>{name}</h2>
         <p>{description}</p>

@@ -1,5 +1,3 @@
-// StoreContext.js
-
 import React, { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -17,7 +15,11 @@ const StoreContextProvider = (props) => {
   const addToCart = async (itemId, quantity = 1) => {
     setCartItems((prev) => ({ ...prev, [itemId]: (prev[itemId] || 0) + quantity }));
     if (token) {
-      await axios.post(url + '/api/cart/add', { itemId, userId: token }, { headers: { token } });
+      try {
+        await axios.post(url + '/api/cart/add', { itemId, userId: token }, { headers: { token } });
+      } catch (error) {
+        console.error('Failed to add item to cart:', error);
+      }
     }
   };
 
@@ -31,7 +33,11 @@ const StoreContextProvider = (props) => {
       return { ...prev, [itemId]: newCount };
     });
     if (token) {
-      await axios.post(url + '/api/cart/remove', { itemId, userId: token }, { headers: { token } });
+      try {
+        await axios.post(url + '/api/cart/remove', { itemId, userId: token }, { headers: { token } });
+      } catch (error) {
+        console.error('Failed to remove item from cart:', error);
+      }
     }
   };
 

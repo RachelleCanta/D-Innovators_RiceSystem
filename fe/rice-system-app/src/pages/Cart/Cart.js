@@ -69,15 +69,15 @@ const Cart = ({ onClose }) => {
   const discountedTotal = calculateDiscountedTotal(total);
 
   const handleAddToCart = async (id) => {
-    const item = food_list.find((item) => item._id === id);
     try {
-      await addToCart({ itemId: id, price: item.price }); // Ensure price is included
+      await addToCart(id);
+      const item = food_list.find((item) => item._id === id);
       toast.success(`Added ${item.name} to cart.`);
     } catch (error) {
       toast.error('Failed to add item to cart.');
     }
   };
-  
+
   const handleRemoveFromCart = async (id) => {
     try {
       await removeFromCart(id);
@@ -87,7 +87,6 @@ const Cart = ({ onClose }) => {
       toast.error('Failed to remove item from cart.');
     }
   };
-  
 
   return (
     <div className="cart">
