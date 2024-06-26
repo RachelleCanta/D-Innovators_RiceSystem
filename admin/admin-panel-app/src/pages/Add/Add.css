@@ -1,9 +1,97 @@
+:root {
+  --blue-100: #dbeafe;
+  --blue-400: #60a5fa;
+  --red-100: #fee2e2;
+  --red-400: #f87171;
+  --green-100: #d1fae5;
+  --green-400: #34d399;
+  --orange-100: #ffedd5;
+  --orange-400: #fb923c;
+}
+
 .add {
+  max-width: 600px;
+  width: 100%;
+  padding: 1rem;
+}
+
+.add > form {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+}
+
+.add > form > .image-div {
+  align-self: center;
+  align-items: center;
+}
+
+.add > form > .image-div label {
+  border: 5px dotted var(--green-400);
+  padding: 0.5rem;
+}
+
+.add > form > .image-div label img {
+  width: 100px;
+  height: 100px;
+  border: none;
+  max-width: 10rem;
+  max-height: 10rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.add > form input,
+.add > form textarea,
+.add > form select {
+  padding: 1rem;
+  width: 100%;
+  font-size: 1rem;
+  color: gray;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+.add > form > div {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+.add > form > div > div {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+
+.add > form > div > p,
+.add > form > div > div > p {
+  font-weight: bold;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--green-100);
+  color: var(--green-400);
+  font-weight: bold;
+  border:none;
+  border-radius:10px;
+}
+
+/* .add {
   width: 150%;
   margin-left: max(5vw, 25px);
-  margin-top: 50px; 
+  margin-top: 50px;
   color: #6d6d6d;
-  font-size: 16px; 
+  font-size: 16px;
   flex-direction: column;
   align-items: center;
   padding: 40px;
@@ -14,7 +102,7 @@
 }
 
 .add form {
-  gap: 20px; 
+  gap: 20px;
 }
 
 .add-img-upload img {
@@ -44,9 +132,21 @@
 }
 
 .add-product-description select {
-  max-width: 500PX;
+  max-width: 500px;
   padding: 20px;
 }
+
+.product-description {
+  width: 100%;
+  text-wrap: wrap;
+  padding: 1rem;
+  border: 1px solid #6d6d6d;
+  border-radius: 8px;
+  resize: none;
+  height: fit-content;
+  max-height: 200px;
+}
+
 .add-btn {
   max-width: 120px;
   border: none;
@@ -81,13 +181,13 @@
   width: 120px;
   height: 120px;
   cursor: pointer;
-  border: 2px dashed #28543C;
+  border: 2px dashed #28543c;
   border-radius: 8px;
   padding: 10px;
 }
 
 .add-img-upload p {
-  color: #28543C;
+  color: #28543c;
   font-weight: bold;
 }
 
@@ -110,7 +210,7 @@
 .add-category select:focus,
 .add-price input:focus,
 .add-product-stocks input:focus {
-  border-color: #28543C;
+  border-color: #28543c;
   outline: none;
 }
 
@@ -122,9 +222,9 @@
   height: 46px;
 }
 
-.add button {
+.add-btn {
   padding: 12px 20px;
-  background-color: #28543C;
+  background-color: #28543c;
   color: white;
   border: none;
   border-radius: 4px;
@@ -135,8 +235,8 @@
   transition: background-color 0.2s;
 }
 
-.add button:hover {
-  background-color: red;
+.add-btn:hover {
+  background-color: goldenrod;
 }
 
 .add-category p,
@@ -165,4 +265,4 @@
   .add {
     max-width: 400px;
   }
-}
+} */

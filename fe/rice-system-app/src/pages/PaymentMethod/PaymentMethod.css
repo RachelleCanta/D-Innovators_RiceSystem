@@ -15,6 +15,7 @@
 
 .qr-code-container {
   display: flex;
+  flex-flow:row wrap;
   justify-content: space-around;
   margin-bottom: 20px;
   cursor: pointer;
@@ -34,7 +35,7 @@
   display: block;
   width: 100%;
   padding: 12px 24px;
-  background-color: #28543C;
+  background-color: #28543c;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -112,13 +113,18 @@
 
 .modal button {
   padding: 10px 20px;
-  background-color: #28543C;
+  background-color: #28543c;
   color: #fff;
   border: none;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin: 0.5rem 0;
+}
+
+.modal button:last-child {
+  background-color: #333;
 }
 
 .modal button:hover {
@@ -145,7 +151,7 @@
 .choose-file-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #28543C;
+  background-color: #28543c;
   color: #fff;
   border: none;
   border-radius: 5px;

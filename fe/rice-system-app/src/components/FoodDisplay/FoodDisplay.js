@@ -9,8 +9,9 @@ const FoodDisplay = ({ category }) => {
   const { foodList } = useContext(StoreContext);
   const filteredFood = category === 'All' ? foodList : foodList.filter((food) => food.category === category);
 
-  const notifyAdd = (name) => toast.success(`${name} added to cart`);
-  const notifyRemove = (name) => toast.error(`${name} removed from cart`);
+  // * test
+  // const notifyAdd = (message, name) => toast.success(`${name} ${message}`);
+  // const notifyRemove = (message, name) => toast.error(`${name} ${message}`);
 
   return (
     <div className='food-display' id='food-display'>
@@ -24,8 +25,9 @@ const FoodDisplay = ({ category }) => {
           price={item.price}
           image={item.image}
           stocks={item.stocks}
-          notifyAdd={notifyAdd}
-          notifyRemove={notifyRemove}
+          // * test
+          // notifyAdd={notifyAdd}
+          // notifyRemove={notifyRemove}
         />
       ))}
     </div>

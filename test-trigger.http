@@ -1,0 +1,12 @@
+// *REQ ORDER
+POST http://localhost:4001/api/order/requestOrder HTTP/1.1
+
+###
+
+// REQ DELIVERY
+POST http://localhost:4001/api/deliver/requestDelivery HTTP/1.1
+
+###
+
+// RUN ALGO ROUTE
+GET http://localhost:4001/api/order/apriori HTTP/1.1

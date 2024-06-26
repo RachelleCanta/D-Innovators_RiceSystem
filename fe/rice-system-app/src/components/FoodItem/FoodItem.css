@@ -1,3 +1,14 @@
+:root {
+  --blue-100: #dbeafe;
+  --blue-400: #60a5fa;
+  --red-100: #fee2e2;
+  --red-400: #f87171;
+  --green-100: #d1fae5;
+  --green-400: #34d399;
+  --orange-100: #ffedd5;
+  --orange-400: #fb923c;
+}
+
 .food-item {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -69,4 +80,105 @@
 .food-actions span {
   font-weight: bold;
   font-size: 1.1rem;
+}
+
+.recommendation-div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 500px;
+  min-height: 300px;
+  background-color: white;
+
+  padding: 2rem 1rem 1rem 1rem;
+  border-radius: 10px;
+
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.recommendation-div > h2 {
+  background-color: var(--red-100);
+  color: var(--red-400);
+  padding:0.5rem;
+  width:100%;
+  border-radius:10px;
+}
+
+.recommendation-actions {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.recommendation-product {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem;
+  align-items: center;
+
+  padding: 1rem;
+  min-width: 200px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width:100%;
+  border-radius:10px;
+}
+
+/* * product name and price div  */
+.product-totals {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+}
+
+/* * name */
+.product-totals span:first-child {
+  font-weight: bold;
+  font-size: 1.15rem;
+}
+
+/* * price */
+.product-totals span:last-child {
+  background-color: var(--red-400);
+  padding: 0.5rem 1rem;
+  color: white;
+  width: max-content;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 450px) {
+  .product-totals span:first-child {
+    font-size: 0.75rem;
+  }
+
+  /* * price */
+  .product-totals span:last-child {
+    font-size: 0.75rem;
+  }
+}
+
+/* * rice image  */
+.recommendation-product img {
+  max-width: 100px;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+}
+
+.sure-button,
+.next-time-button {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.sure-button {
+  background-color: var(--red-100);
+  color: var(--red-400);
 }

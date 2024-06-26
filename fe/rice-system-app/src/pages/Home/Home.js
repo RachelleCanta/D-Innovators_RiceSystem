@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import './Home.css';
-import Header from '../../components/Header/Header';
-import ExploreMenu from '../../components/ExploreMenu/ExploreMenu';
-import Footer from '../../components/Footer/Footer';
-import AppDownload from '../../components/AppDownload/AppDownload';
-// import FoodDisplay from '../../components/FoodDisplay/FoodDisplay'; 
-import FoodItem from '../../components/FoodItem/FoodItem';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from "react";
+import "./Home.css";
+import Header from "../../components/Header/Header";
+import ExploreMenu from "../../components/ExploreMenu/ExploreMenu";
+import Footer from "../../components/Footer/Footer";
+import AppDownload from "../../components/AppDownload/AppDownload";
+// import FoodDisplay from '../../components/FoodDisplay/FoodDisplay';
+import FoodItem from "../../components/FoodItem/FoodItem";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import Promotions from "../../components/Promotions/Promotions";
 
 const Home = () => {
   const [category, setCategory] = useState("All");
@@ -15,16 +16,17 @@ const Home = () => {
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
   return (
     <div>
       <Header />
+      <Promotions />
       <ExploreMenu setCategory={setCategory} />
       {/* <FoodDisplay category={category} /> */}
-      <AppDownload />
+      {/* <AppDownload /> */}
       <ScrollToTopButton onClick={handleScrollToTop} />
     </div>
   );

@@ -1,0 +1,204 @@
+* {
+  transition: all 100ms;
+}
+
+:root {
+  --blue-100: #dbeafe;
+  --blue-400: #60a5fa;
+  --red-100: #fee2e2;
+  --red-400: #f87171;
+  --green-100: #d1fae5;
+  --green-400: #34d399;
+  --orange-100: #ffedd5;
+  --orange-400: #fb923c;
+}
+
+/* * parent container */
+.promotions-parent-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+
+  padding: 1rem;
+
+  margin: 0 0 2rem 0;
+}
+
+@media screen and (max-width: 450px) {
+  .promotions-parent-container > h1 {
+    font-size: 1.2rem;
+    padding: 0rem;
+  }
+}
+
+/* * bundles container */
+.bundles {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+
+  /* border: 2px solid green; */
+  padding: 1rem;
+
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 450px) {
+  .bundles {
+    padding: 0;
+  }
+}
+
+/* * individual bundle */
+.bundle {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+  width: 100%;
+
+  /* border: 2px solid blue; */
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 450px) {
+  .bundle {
+    border: 2px solid var(--green-400);
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+
+/* * bundle total price and products name */
+.bundle-totals {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* * names */
+.bundle-totals span {
+  font-weight: bold;
+  font-size: 1.35rem;
+}
+
+/* * total price */
+.bundle-totals span:last-child {
+  background-color: var(--green-400);
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 450px) {
+  .bundle-totals span {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+}
+
+/* * product pairs container */
+.product-pairs {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  width: 100%;
+
+  /* justify-content: center; */
+
+  /* border: 2px solid black; */
+  padding: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+
+  overflow-x: auto;
+}
+
+@media screen and (max-width: 450px) {
+  .product-pairs {
+    padding: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+    border: 2px solid var(--orange-100);
+  }
+}
+
+/* * individual product */
+.product {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem;
+  align-items: center;
+
+  /* border: 2px solid violet; */
+  padding: 1rem;
+  min-width: 200px;
+}
+
+/* * product name and price div  */
+.product-totals {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+}
+
+/* * name */
+.product-totals span:first-child {
+  font-weight: bold;
+  font-size: 1.15rem;
+}
+
+/* * price */
+.product-totals span:last-child {
+  background-color: var(--red-400);
+  padding: 0.5rem 1rem;
+  color: white;
+  width: max-content;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 450px) {
+  .product-totals span:first-child {
+    font-size: 0.75rem;
+  }
+
+  /* * price */
+  .product-totals span:last-child {
+    font-size: 0.75rem;
+  }
+}
+
+/* * rice image  */
+.product img {
+  max-width: 100px;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+}
+
+/* * actions div */
+.actions {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  align-items: center;
+  align-self: flex-end;
+  width: max-content;
+}
+
+/* * some styles are overriding this style so !important is necessary */
+.add-to-cart-button {
+  background-color: var(--orange-400) !important;
+  padding: 1rem 2rem !important;
+  color: white !important;
+  font-weight: bold !important;
+  border-radius: 10px !important;
+}
+
+@media screen and (max-width: 450px) {
+  .add-to-cart-button {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem !important;
+  }
+}

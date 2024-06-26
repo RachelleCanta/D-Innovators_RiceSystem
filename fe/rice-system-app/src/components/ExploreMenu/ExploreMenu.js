@@ -5,7 +5,7 @@ import FoodDisplay from '../FoodDisplay/FoodDisplay';
 import { menu_list } from '../../assets/assets.js'
 
 const ExploreMenu = () => {
-  const { foodList } = useContext(StoreContext);
+  // const { foodList } = useContext(StoreContext);
   const [category, setCategory] = useState('All');
 
   const handleClick = (brandName) => {
@@ -20,7 +20,7 @@ const ExploreMenu = () => {
     }
   };
 
-  const uniqueCategories = ['All', ...new Set(foodList.map((item) => item.category))];
+  // const uniqueCategories = ['All', ...new Set(foodList.map((item) => item.category))];
 
   return (
     <div>

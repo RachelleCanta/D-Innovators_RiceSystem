@@ -8,7 +8,8 @@ const Navbar = ({ setShowLogin }) => {
   const navigate = useNavigate();
   const [menu, setMenu] = useState("home");
 
-  const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+  const { getTotalCartAmount, token, setToken, setCartItems } =
+    useContext(StoreContext);
 
   const handleMenuClick = (menuItem) => {
     setMenu(menuItem);
@@ -28,9 +29,14 @@ const Navbar = ({ setShowLogin }) => {
   };
 
   const logout = () => {
+    setCartItems([]);
     localStorage.removeItem("token");
     setToken("");
     navigate("/");
+  };
+
+  const orderListClick = () => {
+    navigate("/orderList");
   };
 
   return (
@@ -51,12 +57,12 @@ const Navbar = ({ setShowLogin }) => {
         >
           MENU
         </li>
-        <li
+        {/* <li
           onClick={() => handleMenuClick("app")}
           className={menu === "app" ? "active" : ""}
         >
           APP
-        </li>
+        </li> */}
         <li
           onClick={() => handleMenuClick("contact-us")}
           className={menu === "contact-us" ? "active" : ""}
@@ -77,7 +83,7 @@ const Navbar = ({ setShowLogin }) => {
           <div className="navbar-profile">
             <img src={assets.profile_icon} alt="" />
             <ul className="nav-profile-dropdown">
-              <li>
+              <li onClick={orderListClick}>
                 <img src={assets.bag_icon} alt="Bag" />
                 <p>ORDERS</p>
               </li>

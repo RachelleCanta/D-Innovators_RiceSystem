@@ -18,10 +18,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
     text-align: center;
     margin: 20px 0px;
     overflow-x: scroll;
+    
+    gap: 1rem;
+    padding:0.5rem;
 }
 
 .explore-menu-list::-webkit-scrollbar{
@@ -90,10 +92,10 @@
         max-width: 90%; 
     }
 
-    .explore-menu-list {
+    /* .explore-menu-list {
         flex-direction: column; 
         overflow-x: hidden;
-    }
+    } */
 
     .explore-menu-list-item img {
         width: 100px;
